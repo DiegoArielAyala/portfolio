@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diego Ayala</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
-    <header>
-        <div>Diego ayala</div>
-        <a href="">Sobre mí</a>
-        <a href="">Tecnologías</a>
-        <a href="">Experiencia</a>
-        <a href="">Proyectos</a>
-    </header>
-    <section>
+    <header class="bg-dark1">
+        <div>Diego Ayala</div>
         <div>
-            <img src="../static/img/WhatsApp Image 2021-05-11 at 16.54.45 (2).jpeg" alt="profile" width="100px">
+            <a href="">Sobre mí</a>
+            <a href="">Tecnologías</a>
+            <a href="">Experiencia</a>
+            <a href="">Proyectos</a>
+        </div>
+    </header>
+    <section class="bg-dark2">
+        <div>
+            <img src="../static/img/Foto perfil.jpeg" alt="profile" width="100px">
         </div>
     </section>
-    <section>
+    <section class="bg-dark1">
         <h1>Sobre mí</h1>
         <p>Soy Diego, un desarrollador autodidacta especializado en Backend. Mi interés por la resolución de problemas y la optimización de procesos, me ha llevado a querer aprender de forma continua nuevas tecnologías y habilidades.
             Soy una persona constante y perseverante, que no se detiene hasta cumplir con sus objetivos.
@@ -26,6 +29,74 @@
             Me motiva tener que aprender cosas nuevas y colaborar con otras personas.
             Me apasiona el registro y analisis de datos
         </p>
+        <button>Descargar CV</button>
+    </section>
+    <section class="bg-dark2">
+        <h1>Tecnologías</h1>
+        <div>
+            <div>
+                <h3>Frontend</h3>
+                <div>HTML5</div>
+                <div>CSS</div>
+                <div>JavaScript</div>
+                <div>React</div>
+            </div>
+            <div>
+                <h3>Backend</h3>
+                <div>Python</div>
+                <div>Django</div>
+                <div>NodeJs</div>
+            </div>
+            <div>
+                <h3>Blockchain</h3>
+                <div>Solidity</div>
+                <div>Brownie</div>
+            </div>
+            <div>
+                <h3>Herramientas</h3>
+                <div>Github</div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-dark1">
+        <h1>Experiencia</h1>
+        <p>Tengo más de 1 año trabajando en proyectos personales que me permitan aplicar y expandir mis conocimientos en el desarrollo de sofware</p>
+        <div>
+            <h3>Bike Price Tracker</h3>
+            <p>Abril 2025 - Mayo 2025</p>
+        </div>
+        <div>
+            <h3>Bikechain</h3>
+            <p>Febrero 2025 - Abril 2025</p>
+        </div>
+    </section>
+    <section class="bg-dark2">
+        <h1>Proyectos</h1>
+        <div>
+            <img src="/core/static/img/Bike Price Tracker.png" alt="Bike Price Tracker image" width="100px">
+            <h3>Bike Price Tracker</h3>
+        </div>
+        <div>
+            <img src="/core/static/img/Bikechain.png" alt="Bikechain image" width="100px">
+            <h3>Bikechain</h3>
+        </div>
+    </section>
+    <section class="bg-dark1">
+        <h1>Contacto</h1>
+        <form action="">
+            <div>
+                <label for="id_name">Nombre:</label>
+                <input type="text" name="name" id="id_name">
+            </div>
+            <div>
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" id="id_email">
+            </div>
+            <div>
+                <label for="id_message">Mensaje:</label>
+                <input type="text" name="message" id="id_message">
+            </div>
+        </form>
     </section>
 </body>
 </html>
