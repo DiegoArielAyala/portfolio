@@ -6,15 +6,24 @@ body {
 }
 
 .bg-dark1 {
-    background-color: rgb(29, 29, 29);
-    color: whitesmoke;
+    background-color: rgb(53, 53, 53);
+    color: rgb(240, 240, 240);
     margin: 0;
     width: 100%;
 }
 
 .bg-dark2 {
     background-color: rgb(73, 73, 73);
-    color: whitesmoke;
+    color: rgb(240, 240, 240);
     margin: 0;
     width: 100%;
+}
+
+.text-title {
+    color: rgb(33, 196, 207);
+}
+
+.bg-button {
+    background-color: rgb(33, 196, 207);
+    justify-content: be
 }
