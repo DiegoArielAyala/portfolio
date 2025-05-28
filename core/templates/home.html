@@ -10,27 +10,42 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark1">
+    <nav class="navbar navbar-expand-lg bg-dark1" id="navbar">
         <div class="container">
             <a class="navbar-brand text-title" href="/">Diego Ayala</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="bi bi-three-dots text-title"></span>
             </button>
-            <div class="collapse navbar-collapse text-title" id="navbarNav">
-                <a href="">Sobre mí</a>
-                <a href="">Tecnologías</a>
-                <a href="">Experiencia</a>
-                <a href="">Proyectos</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="menu-link" href="#section-home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="menu-link" href="#section-sobre-mi">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="menu-link" href="#section-tecnologias">Tecnologías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="menu-link" href="#section-experiencia">Experiencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="menu-link" href="#section-proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="menu-link" href="#section-contacto">Contacto</a>
+                    </li>
+                </ul>
             </div>
-
         </div>
     </nav>
 
-    <section class="bg-dark2">
-        <div class="container d-flex align-items-center justify-content-around">
+    <section class="bg-dark2 section-home" id="section-home">
+        <div class="container d-flex align-items-center justify-content-around div-home">
             <div>
                 <div>
-                    <p>DIEGO AYALA GALLI</p>
+                    <p>Diedo Ayala Galli</p>
                     <p>Desarrollador Backend y Blockchain</p>
                 </div>
                 <div>
@@ -46,7 +61,7 @@
         </div>
     </section>
 
-    <section class="bg-dark1">
+    <section class="bg-dark1" id="section-sobre-mi">
         <h1 class="text-title">Sobre mí</h1>
         <p>Soy Diego, un desarrollador autodidacta especializado en Backend. Mi interés por la resolución de problemas y la optimización de procesos, me ha llevado a querer aprender de forma continua nuevas tecnologías y habilidades.
             Soy una persona constante y perseverante, que no se detiene hasta cumplir con sus objetivos.
@@ -56,7 +71,8 @@
         </p>
         
     </section>
-    <section class="bg-dark2">
+
+    <section class="bg-dark2" id="section-tecnologias">
         <h1 class="text-title">Tecnologías</h1>
         <div>
             <div>
@@ -83,7 +99,8 @@
             </div>
         </div>
     </section>
-    <section class="bg-dark1">
+
+    <section class="bg-dark1" id="section-experiencia">
         <h1 class="text-title">Experiencia</h1>
         <p>Tengo más de 1 año trabajando en proyectos personales que me permitan aplicar y expandir mis conocimientos en el desarrollo de sofware</p>
         <div>
@@ -95,7 +112,8 @@
             <p>Febrero 2025 - Abril 2025</p>
         </div>
     </section>
-    <section class="bg-dark2">
+
+    <section class="bg-dark2" id="section-proyectos">
         <h1 class="text-title">Proyectos</h1>
         <div>
             <img src="/core/static/img/Bike Price Tracker.png" alt="Bike Price Tracker image" width="100px">
@@ -106,7 +124,8 @@
             <h3>Bikechain</h3>
         </div>
     </section>
-    <section class="bg-dark1">
+
+    <section class="bg-dark1" id="section-contacto">
         <h1 class="text-title">Contacto</h1>
         <form action="">
             <div>
