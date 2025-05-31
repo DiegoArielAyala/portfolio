@@ -1,4 +1,5 @@
 body {
+    font-family: 'Poppins', sans-serif;
     background-color: rgb(73, 73, 73);
     margin: 0;
     padding: 0;
@@ -23,18 +24,17 @@ body {
     color: rgb(33, 196, 207);
 }
 
-.bg-button {
-    background-color: rgb(33, 196, 207);
-
-}
-
 section {
-    height: 100vh;
     scroll-margin-top: 56px;
 }
 
 #navbar {
     position: fixed;
+    z-index: 999;
+}
+
+.menu li {
+    justify-content: center;
 }
 
 .menu-link {
@@ -46,11 +46,16 @@ section {
     background-color: transparent;
 }
 
-.menu-link::after {
+.menu-link span {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-link span::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0.2rem;
+    bottom: -0.2rem;
     width: 100%;
     height: 2px;
     background-color: rgb(33, 196, 207);
@@ -59,12 +64,12 @@ section {
     transition: transform 0.2s ease-in-out;
 }
 
-.menu-link:hover::after,
-.menu-link:focus::after {
+.menu-link:hover span::after,
+.menu-link:focus span::after {
     transform: scaleX(1);
 }
 
-.menu-link:not(:hover)::after {
+.menu-link span:not(:hover)::after {
     transform: scaleX(0);
     transition-duration: 0s;
 }
@@ -74,6 +79,116 @@ section {
     align-content: center;
 }
 
+.buttons-container {
+    align-items: center;
+    align-content: center;
+    padding-top: 5px;
+}
+
+.button-link:hover {
+    color: rgb(33, 224, 238);
+}
+
+.button-cv {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    background-color: transparent;
+    color: rgb(240, 240, 240);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid rgb(240, 240, 240);
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.button-cv:hover {
+    background-color: rgb(33, 196, 207);
+    color: rgb(240, 240, 240);
+    box-shadow: 0 4px 12px rgba(33, 196, 207, 0.3);
+}
+
 .div-home {
-    height: 50vh;
+    height: 100vh;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-img {
+    width: 200px;
+    display: block;
+}
+
+.img-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(73, 73, 73));
+}
+
+
+#section-sobre-mi {
+    
+}
+
+.div-sobre-mi{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.img-tecnologia {
+    width: 3rem;
+}
+
+.div-tecnologias-imgs {
+    display: flex;
+    justify-content: center;
+}
+
+#img-html  {
+    color: #E34F26;
+}
+
+#img-css  {
+    color: #1572B6;
+}
+
+#img-bootstrap  {
+    color: #7952B3;
+}
+
+#img-js  {
+    color: #F7DF1E;
+}
+
+#img-react  {
+    color: #61DAFB;
+}
+
+#img-python  {
+    color: #3776AB;
+}
+
+#img-django  {
+    color: #092E20;
+}
+
+#img-postgres  {
+    color: #4169E1;
+}
+
+@media (max-width: 991.98px){
+    .navbar-collapse {
+        text-align: center
+    }
+    
 }
