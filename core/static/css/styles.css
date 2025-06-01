@@ -22,6 +22,7 @@ body {
 
 .text-title {
     color: rgb(33, 196, 207);
+    padding-bottom: 1.5rem;
 }
 
 section {
@@ -31,6 +32,7 @@ section {
 #navbar {
     position: fixed;
     z-index: 999;
+    border-bottom: 0.5px solid rgb(33, 196, 207);
 }
 
 .menu li {
@@ -75,7 +77,7 @@ section {
 }
 
 .section-home {
-    height: 100vh;
+    height: 90vh;
     align-content: center;
 }
 
@@ -136,13 +138,13 @@ section {
 }
 
 
-#section-sobre-mi {
-    
-}
-
-.div-sobre-mi{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+.div-sobre-mi,
+.div-tecnologias,
+.div-experiencia,
+.div-proyectos,
+.div-contacto{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .img-tecnologia {
@@ -185,6 +187,87 @@ section {
 #img-postgres  {
     color: #4169E1;
 }
+
+#img-solidity  {
+    color: #363636;
+}
+
+#img-ethersjs  {
+    color: #4169E1;
+}
+
+#img-web3js  {
+    color: #F16822;
+}
+
+#img-git  {
+    color: #F05032;
+}
+
+#img-github  {
+    color: #181717;
+}
+
+#img-github-actions  {
+    color: #2088FF;
+}
+
+#img-docker  {
+    color: #2496ED;
+}
+
+#img-render  {
+    color: #000000;
+}
+
+.div-front-back,
+.div-block-herr {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.div-frontend,
+.div-backend,
+.div-blockchain,
+.div-herramientas {
+    background-color: rgba(53, 53, 53, 0.466);
+    border-left: 3px solid transparent;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all .3s ease;
+}
+
+.div-frontend:hover,
+.div-backend:hover,
+.div-blockchain:hover,
+.div-herramientas:hover {
+    border-left: 3px solid rgb(33, 196, 207);
+}
+
+.div-tecnologias {
+    width: max-content;
+}
+
+.div-tecnologia {
+    margin: .5rem;
+    padding: .5rem;
+    margin-top: 1rem;
+    color: rgb(240, 240, 240);
+    transition: color .3s ease;
+}
+
+.div-tecnologia:hover {
+    color: rgb(33, 196, 207);
+}
+
+.div-tecnologia p {
+    padding-top: .6rem;
+    
+}
+
 
 @media (max-width: 991.98px){
     .navbar-collapse {
