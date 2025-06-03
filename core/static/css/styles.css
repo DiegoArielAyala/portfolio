@@ -6,6 +6,10 @@ body {
     box-sizing: border-box;
 }
 
+p {
+    text-wrap: balance;
+}
+
 .bg-dark1 {
     background-color: rgb(53, 53, 53);
     color: rgb(240, 240, 240);
@@ -84,9 +88,24 @@ section {
 }
 
 .buttons-container {
+    display: flex;
     align-items: center;
     align-content: center;
-    padding-top: 5px;
+}
+
+.button-link {
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.button-link span::before {
+    font-size: 25px;
+    transition: transform 0.3s ease;
+}
+
+.button-link:hover span::before {
+    transform: scale(1.2);
 }
 
 .div-navbar {
@@ -100,6 +119,7 @@ section {
 .button-cv {
     display: inline-block;
     padding: 0.4rem 0.9rem;
+    margin-left: 10px;
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -142,7 +162,6 @@ section {
     height: 40px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(73, 73, 73));
 }
-
 
 .div-sobre-mi,
 .div-tecnologias,
@@ -289,6 +308,7 @@ section {
     transition: border-left .3s ease;
     padding: 1rem;
     padding-left: 13px;
+    box-shadow: 0 0 15px black;
 }
 
 .div-proyecto:hover {
@@ -298,18 +318,27 @@ section {
 .img-proyecto{
     width: 95%;
     border-radius: 10px;
-    transition: all .3s ease;
+    transition: all .3s ease;;
 }
 
 .img-proyecto:hover{
-    width: 100%;
+    transform: scale(1.05);
 }
 
 .div-tecnologias-proyecto {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 120px);
+    justify-content: center;
+    gap: 20px;
 }
 
+.div-tecnologia-proyecto {
+    display: flex;
+}
+
+.img-tecnologia-proyecto {
+    width: 20px;
+}
 
 
 @media (max-width: 991.98px){
