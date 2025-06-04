@@ -1,11 +1,23 @@
-version: "3.8"
-
 services:
   web:
     build: .
     ports:
-      - "8000:8000"
+      - "8001:8001"
     volumes:
       - .:/app
     env_file:
       - .env
+  db:
+    image: postgres:15
+    container_name: postgres_portafolio
+    environment:
+      POSTGRES_DB: portafolio
+      POSTGRES_USER: diegoayala
+      POSTGRES_PASSWORD: diego
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

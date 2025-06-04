@@ -112,6 +112,10 @@ section {
     align-items: center;
 }
 
+.button-home {
+    transition: all .3s ease;
+}
+
 .button-home:hover {
     color: rgb(33, 224, 238);
 }
@@ -136,7 +140,7 @@ section {
 
 .button-cv:hover {
     background-color: rgb(33, 196, 207);
-    color: rgb(240, 240, 240);
+    color: black;
     box-shadow: 0 4px 12px rgba(33, 196, 207, 0.3);
 }
 
@@ -258,7 +262,7 @@ section {
 .div-backend,
 .div-blockchain,
 .div-herramientas {
-    background-color: rgba(53, 53, 53, 0.466);
+    background-color: rgb(73, 73, 73, 0.466);
     border-left: 3px solid transparent;
     border-radius: 10px;
     padding: 1rem;
@@ -289,16 +293,20 @@ section {
 }
 
 .div-tecnologia p {
-    padding-top: .6rem;
-    
+    padding-top: .6rem; 
 }
 
 .div-lista-proyectos {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, 345px);
     grid-auto-columns: minmax(100px, auto);
-    gap: 20px;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.div-proyectos {
+    padding: 48px 0px;
 }
 
 .div-proyecto {
@@ -309,16 +317,29 @@ section {
     padding: 1rem;
     padding-left: 13px;
     box-shadow: 0 0 15px black;
+    width: 345px;
 }
 
 .div-proyecto:hover {
     border-left: 3px solid rgb(33, 196, 207);
 }
 
+.div-proyecto h3 {
+    padding: 5px;
+}
+
+.div-proyecto p {
+    font-size: medium;
+    padding: 5px;
+    text-align: start;
+    margin-bottom: 0;
+}
+
 .img-proyecto{
     width: 95%;
     border-radius: 10px;
-    transition: all .3s ease;;
+    transition: all .3s ease;
+    margin-bottom: 15px;
 }
 
 .img-proyecto:hover{
@@ -326,18 +347,55 @@ section {
 }
 
 .div-tecnologias-proyecto {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 120px);
+    display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    padding: 5px;
 }
+
 
 .div-tecnologia-proyecto {
     display: flex;
+    gap: 4px;
+    font-size: small;
+    border: 1px solid rgba(33, 195, 207, 0.658);
+    border-radius: 100px;
+    justify-content: center;
+    width: max-content;
+    padding: 4px;
+    padding-inline: 10px;
 }
 
 .img-tecnologia-proyecto {
     width: 20px;
+}
+
+.div-botones-proyecto {
+    margin-top: 20px;
+}
+
+.div-botones-proyecto a {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+.div-botones-proyecto button:hover a {
+    text-decoration: none;
+    color: black;
+}
+
+.form > p {
+    display: flex;
+}
+
+.form p {
+    display: flex;
+}
+
+#formStatus {
+    display: none;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 
@@ -347,3 +405,18 @@ section {
     }
     
 }
+
+@media (min-width: 991.98px) {
+    .div-lista-proyectos {
+
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 40px;
+
+    }
+
+
+    .div-proyecto {
+        
+        width: 400px;
+    }
+    }
