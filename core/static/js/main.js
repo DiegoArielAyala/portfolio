@@ -48,3 +48,9 @@ form.addEventListener("submit", async function (event) {
         statusDiv.style.background = "#f8d7da";
     }
 });
+
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.innerText = message
+}

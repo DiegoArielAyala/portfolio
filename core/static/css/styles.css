@@ -37,8 +37,30 @@ section {
 #navbar {
     position: fixed;
     z-index: 999;
-    border-bottom: 0.5px solid rgb(33, 196, 207);
+    border-bottom: 0.5px solid rgb(28, 144, 158);
     
+}
+
+.button-navbar {
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+
+}
+
+.button-navbar span i {
+    font-size: 27px;
+}
+
+.button-navbar {
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.button-navbar:hover span i {
+    color: rgb(120, 228, 232);
 }
 
 .menu li {
@@ -87,6 +109,10 @@ section {
     align-content: center;
 }
 
+.div-presentation {
+    margin-bottom: 30px;
+}
+
 .buttons-container {
     display: flex;
     align-items: center;
@@ -101,11 +127,11 @@ section {
 
 .button-link span::before {
     font-size: 25px;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .button-link:hover span::before {
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 .div-navbar {
@@ -113,14 +139,15 @@ section {
 }
 
 .button-home {
-    transition: all .3s ease;
+    transition: all .2s ease;
 }
 
 .button-home:hover {
-    color: rgb(33, 224, 238);
+    color: rgb(120, 228, 232);
+    text-shadow: rgb(240, 240, 240);
 }
 
-.button-cv {
+.button {
     display: inline-block;
     padding: 0.4rem 0.9rem;
     margin-left: 10px;
@@ -133,16 +160,47 @@ section {
     cursor: pointer;
     user-select: none;
     border: 1px solid rgb(240, 240, 240);
-    transition: background-color 0.3s ease,
-                color 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
-.button-cv:hover {
-    background-color: rgb(33, 196, 207);
+.button:hover {
+    background-color: rgb(58, 207, 214);
     color: black;
-    box-shadow: 0 4px 12px rgba(33, 196, 207, 0.3);
+    box-shadow: 0 4px 12px rgba(28, 144, 158, 0.3);
 }
+
+
+.colors {
+
+    color: #eefdfd;
+    color: #d4f8f9;
+    color: #aff1f2;
+    color: rgb(120, 228, 232);
+    color: rgb(58, 207, 214);
+    color: rgb(33, 196, 207);
+    color: rgb(28, 144, 158);
+    color: #1d7381;
+    color: #205e6a;
+    color: #1f4f5a;
+    color: #0f343d;
+
+
+
+    color: #f0fafb;
+    color: #d9f1f4;
+    color: #b8e3e9;
+    color: #88ced8;
+    color: #50b0c0;
+    color: #3391a3;
+    color: #2e798c;
+    color: #2b6273;
+    color: #2a5260;
+    color: #274552;
+    color: #152c37;
+}
+
 
 .div-home {
     height: 100vh;
@@ -169,7 +227,6 @@ section {
 
 .div-sobre-mi,
 .div-tecnologias,
-.div-experiencia,
 .div-proyectos,
 .div-contacto{
     padding-top: 3rem;
@@ -337,7 +394,7 @@ section {
 
 .img-proyecto{
     width: 95%;
-    border-radius: 10px;
+    border-radius: 6px;
     transition: all .3s ease;
     margin-bottom: 15px;
 }
@@ -398,6 +455,23 @@ section {
     margin-top: 1rem;
 }
 
+.toast {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    opacity: 0.95;
+    z-index: 9999;
+    display: none;
+}
+
+.toast.show {
+    display: block;
+}
+
 
 @media (max-width: 991.98px){
     .navbar-collapse {
@@ -420,3 +494,4 @@ section {
         width: 400px;
     }
     }
+
