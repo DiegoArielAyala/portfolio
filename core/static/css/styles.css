@@ -27,7 +27,7 @@ p {
 .text-title {
     color: rgb(33, 196, 207);
     padding-top: .7rem;
-    padding-bottom: .7rem;
+    padding-bottom: 1.2rem;
 }
 
 section {
@@ -81,6 +81,10 @@ section {
   display: inline-block;
 }
 
+.menu-link.active-link span {
+    color: rgb(175, 241, 242);
+}
+
 .menu-link span::after {
     content: "";
     position: absolute;
@@ -105,7 +109,8 @@ section {
 }
 
 .section-home {
-    height: 90vh;
+    height: 85vh;
+    min-height: 700px;
     align-content: center;
 }
 
@@ -113,7 +118,12 @@ section {
     margin-bottom: 30px;
 }
 
-.buttons-container {
+.div-presentation h1 {
+    margin-bottom: 15px;
+    color: rgb(33, 196, 207);
+}
+
+.footer-buttons {
     display: flex;
     align-items: center;
     align-content: center;
@@ -127,11 +137,12 @@ section {
 
 .button-link span::before {
     font-size: 25px;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .button-link:hover span::before {
     transform: scale(1.3);
+    color: rgb(175, 241, 242);
 }
 
 .div-navbar {
@@ -140,9 +151,12 @@ section {
 
 .button-home {
     transition: all .2s ease;
+    padding-block: 5px;
+    padding-inline: 10px;
 }
 
-.button-home:hover {
+.button-home:hover,
+.button-home:focus {
     color: rgb(120, 228, 232);
     text-shadow: rgb(240, 240, 240);
 }
@@ -166,53 +180,25 @@ section {
 }
 
 .button:hover {
-    background-color: rgb(58, 207, 214);
+    background-color: rgb(175, 241, 242);
     color: black;
     box-shadow: 0 4px 12px rgba(28, 144, 158, 0.3);
 }
 
 
-.colors {
-
-    color: #eefdfd;
-    color: #d4f8f9;
-    color: #aff1f2;
-    color: rgb(120, 228, 232);
-    color: rgb(58, 207, 214);
-    color: rgb(33, 196, 207);
-    color: rgb(28, 144, 158);
-    color: #1d7381;
-    color: #205e6a;
-    color: #1f4f5a;
-    color: #0f343d;
-
-
-
-    color: #f0fafb;
-    color: #d9f1f4;
-    color: #b8e3e9;
-    color: #88ced8;
-    color: #50b0c0;
-    color: #3391a3;
-    color: #2e798c;
-    color: #2b6273;
-    color: #2a5260;
-    color: #274552;
-    color: #152c37;
-}
-
-
 .div-home {
-    height: 100vh;
+    height: 100%;
+    gap: 80px;
 }
 
 .image-container {
     position: relative;
     display: inline-block;
+    width: 300px;
 }
 
 .profile-img {
-    width: 200px;
+    width: 100%;
     display: block;
 }
 
@@ -233,13 +219,148 @@ section {
     padding-bottom: 3rem;
 }
 
-.img-tecnologia {
-    width: 3rem;
+.div-sobre-mi {
+    padding-inline: 50px;
 }
 
-.div-tecnologias-imgs {
-    display: flex;
+.div-sobre-mi h1{
+    margin-bottom: 45px;
+}
+
+.div-sobre-mi p{
+    font-size: 1.2rem;
+    max-width: 1000px;
+    justify-self: center;
+}
+
+.second-p {
+    color: rgb(204, 203, 203);
+}
+
+.resaltado {
+    color: rgb(175, 241, 242);
+    font-weight: 600;
+}
+
+.div-proyectos {
+    padding: 48px 0px 70px 0px;
+}
+
+
+.div-proyectos > p {
+    justify-self: center;
+    max-width: 500px;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+.div-lista-proyectos {
+    display: grid;
     justify-content: center;
+    grid-template-columns: repeat(auto-fit, 345px);
+    grid-auto-columns: minmax(100px, auto);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.div-proyecto {
+    background-color: rgba(53, 53, 53, 0.466);
+    border-radius: 10px;
+    border-inline: 3px solid transparent;
+    transition: all .3s ease;
+    padding: 13px;
+    padding-left: 10px;
+    padding-top: 10px;
+    box-shadow: 0 0 15px black;
+    width: 345px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.div-proyecto:hover {
+    border-left: 3px solid rgb(33, 196, 207);
+}
+
+.div-proyecto h3 {
+    padding: 5px;
+    color: rgb(175, 241, 242)
+}
+
+.div-proyecto p {
+    font-size: medium;
+    padding: 5px;
+    text-align: start;
+    margin-bottom: 5px;
+}
+
+.div-proyecto ul {
+    text-align: left;
+    margin: 10px 5px;
+    padding-left: 20px;
+}
+
+.img-proyecto{
+    width: 100%;
+    margin: 5px;
+    margin-left: 2px;
+    border-radius: 6px;
+    transition: all .3s ease;
+    margin-bottom: 15px;
+    max-height: 248.64px;
+}
+
+.img-proyecto:hover{
+    transform: scale(1.05);
+}
+
+.div-tecnologias-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+
+.div-tecnologia-proyecto {
+    display: flex;
+    gap: 4px;
+    font-size: small;
+    border: 1px solid rgba(33, 195, 207, 0.658);
+    border-radius: 100px;
+    justify-content: center;
+    width: max-content;
+    padding: 4px;
+    padding-inline: 10px;
+    transition: all 0.1s ease;
+}
+
+.div-tecnologia-proyecto:hover {
+    box-shadow: 0px 1px 1px rgba(33, 195, 207, 0.39);
+    
+}
+
+.img-tecnologia-proyecto {
+    width: 20px;
+}
+
+.div-botones-proyecto {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.div-botones-proyecto a {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+.div-botones-proyecto button:hover a {
+    text-decoration: none;
+    color: black;
 }
 
 #img-html  {
@@ -275,7 +396,7 @@ section {
 }
 
 #img-solidity  {
-    color: #363636;
+    color: #303030;
 }
 
 #img-ethersjs  {
@@ -309,10 +430,14 @@ section {
 .div-front-back,
 .div-block-herr {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.div-front-back {
+    margin-top: 40px;
 }
 
 .div-frontend,
@@ -324,6 +449,7 @@ section {
     border-radius: 10px;
     padding: 1rem;
     transition: all .3s ease;
+
 }
 
 .div-frontend:hover,
@@ -331,6 +457,37 @@ section {
 .div-blockchain:hover,
 .div-herramientas:hover {
     border-left: 3px solid rgb(33, 196, 207);
+    color: rgb(175, 241, 242);
+}
+
+.div-frontend,
+.div-backend {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.div-frontend {
+    flex-grow: 5;
+}
+
+.div-backend {
+    flex-grow: 3;
+}
+
+.div-blockchain,
+.div-herramientas {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.div-blockchain {
+    flex-grow: 4;
+}
+
+.div-herramientas {
+    flex-grow: 5;
 }
 
 .div-tecnologias {
@@ -346,99 +503,52 @@ section {
 }
 
 .div-tecnologia:hover {
-    color: rgb(33, 196, 207);
+    color: rgb(175, 241, 242);
 }
 
 .div-tecnologia p {
     padding-top: .6rem; 
 }
 
-.div-lista-proyectos {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, 345px);
-    grid-auto-columns: minmax(100px, auto);
-    gap: 30px;
-    margin-top: 20px;
+
+.img-tecnologia {
+    width: 3rem;
 }
 
-.div-proyectos {
-    padding: 48px 0px;
+.div-tecnologias-imgs {
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.div-proyecto {
-    background-color: rgba(53, 53, 53, 0.466);
-    border-radius: 10px;
-    border-left: 3px solid transparent;
-    transition: border-left .3s ease;
-    padding: 1rem;
-    padding-left: 13px;
-    box-shadow: 0 0 15px black;
-    width: 345px;
+.div-contacto {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgb(73, 73, 73, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    margin-block: 40px;
 }
 
-.div-proyecto:hover {
-    border-left: 3px solid rgb(33, 196, 207);
+.div-contacto h1.text-title {
+    margin-bottom: 1.5rem;
 }
 
-.div-proyecto h3 {
-    padding: 5px;
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.div-proyecto p {
+.form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
     font-size: medium;
-    padding: 5px;
-    text-align: start;
-    margin-bottom: 0;
-}
-
-.img-proyecto{
-    width: 95%;
-    border-radius: 6px;
-    transition: all .3s ease;
-    margin-bottom: 15px;
-}
-
-.img-proyecto:hover{
-    transform: scale(1.05);
-}
-
-.div-tecnologias-proyecto {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 5px;
-}
-
-
-.div-tecnologia-proyecto {
-    display: flex;
-    gap: 4px;
-    font-size: small;
-    border: 1px solid rgba(33, 195, 207, 0.658);
-    border-radius: 100px;
-    justify-content: center;
-    width: max-content;
-    padding: 4px;
-    padding-inline: 10px;
-}
-
-.img-tecnologia-proyecto {
-    width: 20px;
-}
-
-.div-botones-proyecto {
-    margin-top: 20px;
-}
-
-.div-botones-proyecto a {
-    text-decoration: none;
-    color: rgb(240, 240, 240);
-}
-
-.div-botones-proyecto button:hover a {
-    text-decoration: none;
-    color: black;
 }
 
 .form > p {
@@ -449,27 +559,73 @@ section {
     display: flex;
 }
 
-#formStatus {
-    display: none;
-    padding: 1rem;
-    margin-top: 1rem;
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+    min-height: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fonm textarea {
+    min-height: 100px;
+}
+
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: rgb(175, 241, 242, 0.8);
+    box-shadow: 0 0 5px rgb(120, 228, 232, 0.8);
+    background-color: rgba(60, 60, 60, 0.9);
+}
+
+.form button.button {
+    background-color: rgb(58, 207, 214);
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(60, 60, 60, 0.9);
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    align-self: center;
+}
+
+.form button.button:hover {
+    background-color: rgb(98, 232, 236);
+    
 }
 
 .toast {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background-color: #333;
-    color: white;
-    padding: 0.75rem 1.25rem;
-    border-radius: 4px;
-    opacity: 0.95;
+    background-color: rgb(33, 196, 207);
+    color: rgb(53, 53, 53);
+    padding: 1rem 1.5rem;
+    border-radius: 0.375px;
+    opacity: 0;
     z-index: 9999;
-    display: none;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(33, 196, 207, 0.7);
 }
 
 .toast.show {
-    display: block;
+    opacity: 0.95;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 
@@ -494,4 +650,45 @@ section {
         width: 400px;
     }
     }
+
+@media (max-width: 600px) {
+    .div-contacto {
+        padding: 1.5rem 1rem;
+        width: 90%;
+    }
+
+    .form .button.button {
+        width: 100%;
+    }
+}
+
+    
+.colors {
+
+    color: #eefdfd;
+    color: #d4f8f9;
+    color: rgb(175, 241, 242);
+    color: rgb(120, 228, 232);
+    color: rgb(58, 207, 214);
+    color: rgb(33, 196, 207);
+    color: rgb(28, 144, 158);
+    color: #1d7381;
+    color: #205e6a;
+    color: #1f4f5a;
+    color: #0f343d;
+
+
+
+    color: #f0fafb;
+    color: #d9f1f4;
+    color: #b8e3e9;
+    color: #88ced8;
+    color: #50b0c0;
+    color: #3391a3;
+    color: #2e798c;
+    color: #2b6273;
+    color: #2a5260;
+    color: #274552;
+    color: #152c37;
+}
 

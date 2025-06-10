@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,11 @@
     <title>Diego Ayala</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     
 </head>
 <body>
@@ -16,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-dark1" id="navbar">
         <div class="container div-navbar">
             <a class="navbar-brand text-title button-home" href="/">Diego Ayala</a>
-            <button class="button-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="button-navbar d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="text-title"><i class="fa-solid fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNav">
@@ -42,22 +45,22 @@
     </nav>
 
     <section class="bg-dark2 section-home" id="section-home">
-        <div class="container d-flex align-items-center justify-content-around div-home">
+        <div class="container d-flex align-items-center justify-content-center div-home">
             <div >
-                <div class="div-presentation">
-                    <h1 class="fs-2">Diego Ayala Galli</h1>
-                    <p class="fs-5">Desarrollador Backend y Blockchain.</p>
+                <div class="div-presentation" data-aos="fade-up">
+                    <h1 class="fs-1">Diego Ayala Galli</h1>
+                    <p class="fs-4">Desarrollador Backend y Blockchain.</p>
                 </div>
-                <div class="buttons-container">
+                <footer class="footer-buttons">
                     <a class="text-title button-link" href=""><span class="bi bi-envelope"></span></a>
 
                     <a class="text-title button-link" href=""><span class="bi bi-linkedin"></span></a>
 
                     <a class="text-title button-link" href=""><span class="bi bi-github"></span></a>
                     <button class="button">Descargar CV</button>
-                </div>
+                </footer>
             </div>
-            <div class="image-container">
+            <div class="image-container" data-aos="fade-up" data-aos-delay="100">
                 <img class="profile-img" src="../static/img/Foto perfil.jpeg" alt="profile">
                 <div class="img-gradient"></div>
             </div>
@@ -68,13 +71,13 @@
         <div class="container div-sobre-mi">
             <h1 class="text-title">Sobre mí</h1>
             <p>
-                Soy Diego, desarrollador autodidacta con más de 1 año de experiencia práctica.
+                Soy Diego, <strong class="resaltado">desarrollador autodidacta</strong> con más de <strong class="resaltado">1 año de experiencia</strong> práctica.
+            </p>
+            <p class="second-p">
+                Mi interés por <strong class="resaltado">resolver problemas</strong> y <strong class="resaltado">optimizar procesos</strong> me impulsa a aprender constantemente nuevas tecnologías y habilidades.
             </p>
             <p>
-                Mi interés por resolver problemas y optimizar procesos me impulsa a aprender constantemente nuevas tecnologías y habilidades.
-            </p>
-            <p>
-                Me defino como una persona perseverante y autónoma, con capacidad para adaptarme a distintos entornos y desafíos. Disfruto colaborar en equipo para encontrar soluciones eficientes ante cualquier obstáculo.
+                Me defino como una persona <strong class="resaltado">perseverante</strong> y <strong class="resaltado">autónoma</strong>, con capacidad para <strong class="resaltado">adaptarme</strong> a distintos entornos y desafíos. Disfruto <strong class="resaltado">colaborar en equipo</strong> para encontrar soluciones eficientes ante cualquier obstáculo.
             </p>
 
         </div>
@@ -85,23 +88,27 @@
     <section class="bg-dark2 text-center" id="section-proyectos">
         <div class="container div-proyectos">
             <h1 class="text-title">Proyectos</h1>
-            <p>Estos son los proyectos personales con los que puedo demostrar mi experiencia y conocimientos. </p>
+            <p>Proyectos personales donde demuestro mis conocimientos y experiencia en desarrollo. </p>
             <div class="div-lista-proyectos">
-                <article class="div-proyecto">
-                    <a href="/bike-price-tracker/"><img class="img-proyecto" src="/static/img/Bike Price Tracker.png" alt="Bike Price Tracker image"></a>
+
+                <article class="div-proyecto" id="bike-price-tracker" data-aos="zoom-in-up" data-aos-delay="50">
+                    <a href="bike-price-tracker"><img class="img-proyecto" src="/static/img/Bike Price Tracker.png" alt="Bike Price Tracker image" loading="lazy"></a>
                     
                     <h3>Bike Price Tracker</h3>
-                    <p>Web para ver el historial de precios de bicicletas para aprovechar a comprarla cuando tenga el precio más bajo.
-                        <li>
-                            Scraping
-                        </li>
-                        <li>
-                            Autenticación de usuarios
-                        </li>
-                        <li>
-                            Suscripción a alartas por email
-                        </li>
+                    <p>Aplicación web para consultar el <strong>historial de precios</strong> de bicicletas, diseñada para <strong>ayudar a los usuarios</strong> a identificar el mejor momento para comprar. 
                     </p>
+                    <ul>
+                        <li>
+                            Scraping automatizado
+                        </li>
+                        <li>
+                            Gestión de usuarios con autenticación
+                        </li>
+                        <li>
+                            Notificaciones por email cuando el precio baja
+                        </li>
+                    </ul>
+
                     <div class="div-tecnologias-proyecto">
                         <div class="div-tecnologia-proyecto">
                             <svg class="img-tecnologia-proyecto" id="img-html" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-html"></use></svg>
@@ -111,8 +118,6 @@
                             <svg class="img-tecnologia-proyecto" id="img-css" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-css"></use></svg>
                             <span>CSS</span>
                         </div>
-                    </div>
-                    <div class="div-tecnologias-proyecto">
                         <div class="div-tecnologia-proyecto">
                             <svg class="img-tecnologia-proyecto" id="img-python" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-python"></use></svg>
                             <span>Python</span>
@@ -121,26 +126,68 @@
                             <svg class="img-tecnologia-proyecto" id="img-django" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-django"></use></svg>
                             <span>Django</span>
                         </div>
-                    </div>
-                    <div class="div-tecnologias-proyecto">
                         <div class="div-tecnologia-proyecto">
                             <svg class="img-tecnologia-proyecto" id="img-postgres" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-postgres"></use></svg>
                             <span>PostgreSQL</span>
                         </div>
                     </div>
+                    
                     <footer class="div-botones-proyecto">
                         <button class="button"><a href="bike-price-tracker">Más info</a></button>
                         <button class="button">Demo</button>
                         <button class="button">GitHub</button>
                     </footer>
                 </article>
-                <article class="div-proyecto">
-                    <img class="img-proyecto" src="/static/img/Bikechain.png" alt="Bikechain image">
+
+                <article class="div-proyecto" id="bikechain" data-aos="zoom-in-up" data-aos-delay="150">
+                    <a href="bikechain"><img class="img-proyecto" src="/static/img/Bikechain.png" alt="Bikechain image" loading="lazy"></a>
+                    
                     <h3>Bikechain</h3>
+                    <p>Aplicación web que permite registrar entrenamientos de ciclismo en la <strong>blockchain</strong> de Ethereum, generando <strong>NFTs como reconocimiento</strong>de tus logros.
+                    </p>
+                    <ul>
+                        <li>
+                            Registro en contratos inteligentes
+                        </li>
+                        <li>
+                            Creacion de NFTs
+                        </li>
+                        <li>
+                            Conexión con Metamask
+                        </li>
+                    </ul>
+
+                    <div class="div-tecnologias-proyecto">
+                        <div class="div-tecnologia-proyecto">
+                            <svg class="img-tecnologia-proyecto" id="img-html" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-html"></use></svg>
+                            <span>HTML</span>
+                        </div>
+                        <div class="div-tecnologia-proyecto">
+                            <svg class="img-tecnologia-proyecto" id="img-css" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-css"></use></svg>
+                            <span>CSS</span>
+                        </div>
+                        <div class="div-tecnologia-proyecto">
+                            <svg class="img-tecnologia-proyecto" id="img-python" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-python"></use></svg>
+                            <span>Python</span>
+                        </div>
+                        <div class="div-tecnologia-proyecto">
+                            <svg class="img-tecnologia-proyecto" id="img-django" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-django"></use></svg>
+                            <span>Django</span>
+                        </div>
+                        <div class="div-tecnologia-proyecto">
+                            <svg class="img-tecnologia-proyecto" id="img-postgres" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-postgres"></use></svg>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <footer class="div-botones-proyecto">
+                        <button class="button"><a href="bikechain">Más info</a></button>
+                        <button class="button">Demo</button>
+                        <button class="button">GitHub</button>
+                    </footer>
                 </article>
 
             </div>
-
         </div>
     </section>
 
@@ -148,7 +195,7 @@
         <div class="container div-tecnologias">
             <h1 class="text-title">Tecnologías</h1>
             <div class="div-front-back">
-                <div class="div-frontend">
+                <div class="div-frontend" data-aos="zoom-in-right">
                     <h3>Frontend</h3>
                     <div class="div-tecnologias-imgs">
                         <div class="div-tecnologia">
@@ -184,7 +231,7 @@
                     </div>
                 </div>
 
-                <div class="div-backend">
+                <div class="div-backend" data-aos="zoom-in-left" data-aos-delay="100">
                     <h3>Backend</h3>
                     <div class="div-tecnologias-imgs">
                         <div class="div-tecnologia">
@@ -211,7 +258,7 @@
             </div>
 
             <div class="div-block-herr">
-                <div class="div-blockchain">
+                <div class="div-blockchain" data-aos="zoom-in-right">
                     <h3>Blockchain</h3>
                     <div class="div-tecnologias-imgs">
                         <div class="div-tecnologia">
@@ -239,7 +286,7 @@
                     </div>
                 </div>
                 
-                <div class="div-herramientas">
+                <div class="div-herramientas" data-aos="zoom-in-left" data-aos-delay="100">
                     <h3>Herramientas</h3>
                     <div class="div-tecnologias-imgs">
                         <div class="div-tecnologia">
@@ -298,11 +345,17 @@
                 </div>
                 <button class="button" type="submit">Enviar</button>
             </form>
-            <div id="toast" class="toast"></div>
+            <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+                <!-- Aquí se insertarán los toasts dinámicamente -->
+            </div>
+            </div>
+
         </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../static/js/main.js"></script>
 </body>
 </html>

@@ -3,11 +3,10 @@ from email.mime.text import MIMEText
 import smtplib
 from django.shortcuts import render, redirect
 from .forms import ContactForm
-from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import send_mail
-from django.conf import settings
 import os
+from django.contrib import messages
+from django.http import JsonResponse
 
 # Create your views here.
 def home(request):
@@ -24,6 +23,9 @@ def home(request):
 def bike_price_tracker(request):
     return render(request, "bike-price-tracker.html")
 
+def bikechain(request):
+    return render(request, "bikechain.html")
+
 @csrf_exempt
 def contact(request):
     if request.method == "POST":
@@ -31,10 +33,10 @@ def contact(request):
         if form.is_valid():
             message = form.save()
             send_alert(message)
-            return render(request, "home.html", {
-                "form": ContactForm
-            })
-    return render(request, "home.html")    
+            return JsonResponse({"success": True, "message": "Mensaje enviado correctamente."})
+        else:
+            return JsonResponse({"success": False, "errors": form.errors}, status=400)
+    return JsonResponse({"error": "Método no permitido"}, status=405)
 
 def send_alert(message):
     from_ = os.getenv("EMAIL_HOST_USER")
@@ -57,3 +59,4 @@ def send_alert(message):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(from_, password)
         server.send_message(mail)
+
