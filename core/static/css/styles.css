@@ -1,6 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(73, 73, 73);
+    background-color: rgb(31, 31, 31);
+    color: rgb(240, 240, 240);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,17 +13,12 @@ p {
 
 .bg-dark1 {
     background-color: rgb(53, 53, 53);
+    background-color: rgb(31, 31, 31);
     color: rgb(240, 240, 240);
     margin: 0;
     width: 100%;
 }
 
-.bg-dark2 {
-    background-color: rgb(73, 73, 73);
-    color: rgb(240, 240, 240);
-    margin: 0;
-    width: 100%;
-}
 
 .text-title {
     color: rgb(33, 196, 207);
@@ -30,22 +26,31 @@ p {
     padding-bottom: 1.2rem;
 }
 
+.section-title {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
 section {
     scroll-margin-top: 56px;
 }
 
 #navbar {
-    position: fixed;
-    z-index: 999;
-    border-bottom: 0.5px solid rgb(28, 144, 158);
-    
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  padding-block: 0.3rem;
+  border-bottom: 0.5px solid rgb(28, 144, 158);
+  background-color: rgba(15, 15, 15, 0.5); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .button-navbar {
     border: none;
     padding: 10px;
     background-color: transparent;
-
 }
 
 .button-navbar span i {
@@ -61,6 +66,10 @@ section {
 
 .button-navbar:hover span i {
     color: rgb(120, 228, 232);
+}
+
+#menu-bars {
+    padding-bottom: .5rem;
 }
 
 .menu li {
@@ -109,18 +118,33 @@ section {
 }
 
 .section-home {
-    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
     min-height: 700px;
-    align-content: center;
+    position: relative;
+    background: linear-gradient(-45deg, rgb(35, 35, 35), rgb(30, 30, 30), #2acdd8, rgb(35, 35, 35));
+    background-size: 300% 300%;
+    animation: gradientBG 1s ease forwards;
+    color: white;
+    overflow: hidden;
 }
 
 .div-presentation {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .div-presentation h1 {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    margin-left: 15px;
     color: rgb(33, 196, 207);
+    font-size: 50px;
+}
+
+.div-presentation P {
+    margin-left: 15px;
+    margin-bottom: 35px;
 }
 
 .footer-buttons {
@@ -187,28 +211,59 @@ section {
 
 
 .div-home {
-    height: 100%;
-    gap: 80px;
+    flex-grow: 1;
+    gap: 130px;
 }
 
 .image-container {
-    position: relative;
-    display: inline-block;
-    width: 300px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
 }
 
 .profile-img {
     width: 100%;
+    border-radius: 14px;
     display: block;
 }
 
-.img-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(73, 73, 73));
+
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.arrow-down {
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+#section-home > .container:last-child {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.div-arrow {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2.5rem;
 }
 
 .div-sobre-mi,
@@ -228,7 +283,7 @@ section {
 }
 
 .div-sobre-mi p{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     max-width: 1000px;
     justify-self: center;
 }
@@ -249,9 +304,10 @@ section {
 
 .div-proyectos > p {
     justify-self: center;
-    max-width: 500px;
-    font-size: 1.2rem;
+    max-width: 600px;
+    font-size: 1.3rem;
     margin-bottom: 50px;
+    text-wrap: balance;
 }
 
 .div-lista-proyectos {
@@ -289,7 +345,7 @@ section {
 }
 
 .div-proyecto p {
-    font-size: medium;
+    font-size: 1.1rem;
     padding: 5px;
     text-align: start;
     margin-bottom: 5px;
@@ -299,6 +355,7 @@ section {
     text-align: left;
     margin: 10px 5px;
     padding-left: 20px;
+    font-size: 1.1rem;
 }
 
 .img-proyecto{
@@ -396,7 +453,7 @@ section {
 }
 
 #img-solidity  {
-    color: #303030;
+    color: #222222;
 }
 
 #img-ethersjs  {
@@ -425,6 +482,10 @@ section {
 
 #img-render  {
     color: #000000;
+}
+
+#img-nodejs {
+    color: #5FA04E;
 }
 
 .div-front-back,
@@ -472,7 +533,7 @@ section {
 }
 
 .div-backend {
-    flex-grow: 3;
+    flex-grow: 4;
 }
 
 .div-blockchain,
@@ -534,6 +595,7 @@ section {
     margin-bottom: 1.5rem;
 }
 
+
 .form {
     display: flex;
     flex-direction: column;
@@ -548,7 +610,7 @@ section {
 .form label {
     font-weight: 600;
     margin-bottom: 0.4rem;
-    font-size: medium;
+    font-size: 1.1rem;
 }
 
 .form > p {
@@ -574,8 +636,9 @@ section {
     font-family: 'Poppins', sans-serif;
 }
 
-.fonm textarea {
+.form textarea {
     min-height: 100px;
+    
 }
 
 .form input[type="text"]:focus,
@@ -585,6 +648,7 @@ section {
     border-color: rgb(175, 241, 242, 0.8);
     box-shadow: 0 0 5px rgb(120, 228, 232, 0.8);
     background-color: rgba(60, 60, 60, 0.9);
+    color: white;
 }
 
 .form button.button {
@@ -638,18 +702,14 @@ section {
 
 @media (min-width: 991.98px) {
     .div-lista-proyectos {
-
-    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-columns: repeat(auto-fit, 450px);
     gap: 40px;
-
     }
-
 
     .div-proyecto {
-        
-        width: 400px;
+        width: 450px;
     }
-    }
+}
 
 @media (max-width: 600px) {
     .div-contacto {
@@ -661,6 +721,7 @@ section {
         width: 100%;
     }
 }
+
 
     
 .colors {

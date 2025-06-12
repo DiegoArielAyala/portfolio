@@ -16,132 +16,34 @@ document.querySelector("html").addEventListener("click", () => {
     }
 });
 
-/* 
-
-const form = document.getElementById("contactForm");
-const statusDiv = document.getElementById("toast")
-
-form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-    
-    statusDiv.textContent = "Enviando...";
-    statusDiv.style.display = "block";
-    statusDiv.style.background = "#f0f0f0";
-    
-    const formData = new FormData(form);
-    
-    try {
-        const response = await fetch(form.action || window.location.href, {
-            method: "POST",
-            body: formData,
-            headers: {
-                "X-Requested-With": "XMLHttpRequest",
-            },
-        });
-        
-        if (response.ok) {
-            const json = await response.json();
-            statusDiv.textContent = "¡Gracias por tu mensaje! Me pondré en contacto contigo a la brevedad.";
-            statusDiv.style.background = "#d4edda";
-            form.reset();
-            showToast("Mensaje enviado correctamente.");
-        } else {
-            statusDiv.textContent = "Ocurrió un error al enviar el mensaje.";
-        statusDiv.style.background = "#f8d7da";
-        showToast("Error al enviar el mensaje.");
-    }
-} catch (error) {
-    statusDiv.textContent = "Error de red o del servidor.";
-    statusDiv.style.background = "#f8d7da";
-    showToast("Error de red o del servidor.");
-}
-});
-
-
-function showToast(message) {
-    const toast = document.getElementById("toast");
-    toast.innerText = message;
-    toast.classList.add("show");
-    
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 4000);
-}
-
-const form = document.getElementById("contactForm");
-
-function createToast(message, type = "success") {
-    const icons = {
-        success: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/></svg>`,
-        danger: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414Z"/></svg>`,
-        loading: `<svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="white" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>`
-    };
-    
-    const colors = {
-        success: "text-green-500 bg-white dark:bg-gray-800",
-        danger: "text-red-500 bg-white dark:bg-gray-800",
-        loading: "text-blue-500 bg-white dark:bg-gray-800"
-    };
-    
-    const container = document.getElementById("toast-container");
-    const toast = document.createElement("div");
-    toast.className = `flex items-center max-w-xs p-4 text-sm rounded-lg shadow-sm ${colors[type]}`;
-    toast.innerHTML = `
-    <div class="inline-flex items-center justify-center w-8 h-8 mr-3">${icons[type]}</div>
-    <span class="text-sm font-medium text-gray-700 dark:text-gray-200">${message}</span>
-    `;
-
-    container.appendChild(toast);
-    
-    setTimeout(() => {
-        toast.classList.add("opacity-0", "transition-opacity", "duration-500");
-        setTimeout(() => toast.remove(), 500);
-    }, 3000);
-}
-
-form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-    
-    createToast("Enviando mensaje...", "loading");
-    
-    const formData = new FormData(form);
-    
-    try {
-        const response = await fetch(form.action || window.location.href, {
-            method: "POST",
-            body: formData,
-            headers: {
-                "X-Requested-With": "XMLHttpRequest",
-            },
-        });
-        
-        if (response.ok) {
-            form.reset();
-            createToast("¡Mensaje enviado con éxito!", "success");
-        } else {
-            createToast("Error al enviar el mensaje.", "danger");
-    }
-} catch (error) {
-    createToast("Error de red o del servidor.", "danger");
-}
-});
-
-*/
 
 // Toast con bootstrap
 function createBootstrapToast(message, type = "success") {
+    const icons = {
+        success: `<i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>`,
+        danger: `<i class="bi bi-x-circle-fill text-danger fs-5 me-2"></i>`,
+        info: `<i class="spinner-border text-warning me-2" style="width: 1rem; height: 1rem;" role="status"><span class="visually-hidden">Loading...</span></i>`
+    };
+
+    const borderClasses = {
+        success: "border-start border-4 border-success",
+        danger: "border-start border-4 border-danger",
+        info: "border-start border-4 border-warning"
+    };
+
   const toastContainer = document.getElementById("toast-container");
 
   const toastEl = document.createElement("div");
-  toastEl.className = `toast align-items-center text-bg-${type} border-0`;
-  toastEl.setAttribute("role", "alert");
+  toastEl.className = `toast align-items-center shadow-sm bg-white ${borderClasses[type]} border-0 mb-2`;  toastEl.setAttribute("role", "alert");
   toastEl.setAttribute("aria-live", "assertive");
   toastEl.setAttribute("aria-atomic", "true");
 
   toastEl.innerHTML = `
     <div class="d-flex">
-      <div class="toast-body">${message}</div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      <div class="toast-body d-flex align-items-center">
+        ${icons[type]}<span class="fw-semibold">${message}</span>
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   `;
 
@@ -222,3 +124,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", onScroll);
 });
+
+
+tsParticles.load("tsparticles", {
+  background: {
+    color: "transparent"
+  },
+  particles: {
+    number: { value: 40 },
+    size: { value: 3 },
+    color: { value: "#21c4cf" },
+    move: { enable: true, speed: 1 },
+    line_linked: { enable: true, distance: 120, color: "#21c4cf", opacity: 0.3 }
+  },
+  fullScreen: { enable: false }
+});
+
+
+// Copiar email
+function copyEmail() {
+  navigator.clipboard.writeText("diegoa.ayala@gmail.com");
+  alert("Correo copiado al portapapeles");
+}
