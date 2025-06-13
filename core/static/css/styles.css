@@ -83,6 +83,11 @@ section {
     color: rgb(240, 240, 240);
     text-decoration: none;
     background-color: transparent;
+    margin-inline: 3px;
+}
+
+#lang-toggle{
+    cursor: pointer;
 }
 
 .menu-link span {
@@ -209,6 +214,9 @@ section {
     box-shadow: 0 4px 12px rgba(28, 144, 158, 0.3);
 }
 
+.button-cv {
+    padding: 0.4rem 1rem;
+}
 
 .div-home {
     flex-grow: 1;
@@ -304,7 +312,7 @@ section {
 
 .div-proyectos > p {
     justify-self: center;
-    max-width: 600px;
+    max-width: 800px;
     font-size: 1.3rem;
     margin-bottom: 50px;
     text-wrap: balance;

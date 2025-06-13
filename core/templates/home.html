@@ -28,16 +28,16 @@
                         <a class="menu-link" href="#section-home"><span data-i18n="home_title"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="menu-link" href="#section-sobre-mi"><span>Sobre mí</span></a>
+                        <a class="menu-link" href="#section-sobre-mi"><span data-i18n="about_me_title"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="menu-link" href="#section-proyectos"><span>Proyectos</span></a>
+                        <a class="menu-link" href="#section-proyectos"><span data-i18n="project_title"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="menu-link" href="#section-tecnologias"><span>Tecnologías</span></a>
+                        <a class="menu-link" href="#section-tecnologias"><span data-i18n="technologies_title"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="menu-link" href="#section-contacto"><span>Contacto</span></a>
+                        <a class="menu-link" href="#section-contacto"><span data-i18n="contact_title"></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="menu-link" id="lang-toggle"><span>ES</span></a>
@@ -52,14 +52,13 @@
             <div>
                 <div class="div-presentation" data-aos="fade-up" data-aos-delay="50">
                     <h1>Diego Ayala Galli</h1>
-                    <p class="fs-3">Desarrollador Backend y Blockchain.</p>
+                    <p class="fs-3" data-i18n="home_p"></p>
                 </div>
                 <footer class="footer-buttons">
                     <a class="text-title button-link" href="#" onclick="copyEmail()"><span class="bi bi-envelope"></span></a>
                     <a class="text-title button-link" href="https://www.linkedin.com/in/diegoayalagalli/" target="_blank" rel="noopener noreferrer"><span class="bi bi-linkedin"></span></a>
                     <a class="text-title button-link" href="https://github.com/DiegoArielAyala" target="_blank" rel="noopener noreferrer"><span class="bi bi-github"></span></a>
-                    <a href="../static/assets/curriculum.pdf" target="_blank" rel="noopener noreferrer"><button class="button">Descargar CV</button></a>
-                    
+                    <a href="../static/assets/curriculum.pdf" target="_blank" rel="noopener noreferrer"><button class="button button-cv" data-i18n="button_resume"></button></a>
                 </footer>
             </div>
             <div class="image-container" data-aos="fade-up">
@@ -68,7 +67,7 @@
             </div>
         </div>
         <div class="div-arrow">
-            <a href="#section-sobre-mi">
+            <a href="#section-sobre-mi" title="Sobre mí">
                 <i class="fas fa-chevron-down arrow-down"></i>
             </a>
         </div>
@@ -76,16 +75,10 @@
 
     <section class="bg-dark1 text-center" id="section-sobre-mi">
         <div class="container div-sobre-mi">
-            <h1 class="text-title section-title">Sobre mí</h1>
-            <p>
-                Soy Diego, <strong class="resaltado">desarrollador autodidacta</strong> con más de <strong class="resaltado">1 año de experiencia</strong> práctica.
-            </p>
-            <p class="second-p">
-                Mi interés por <strong class="resaltado">resolver problemas</strong> y <strong class="resaltado">optimizar procesos</strong> me impulsa a aprender constantemente nuevas tecnologías y habilidades.
-            </p>
-            <p>
-                Me defino como una persona <strong class="resaltado">perseverante</strong> y <strong class="resaltado">autónoma</strong>, con capacidad para <strong class="resaltado">adaptarme</strong> a distintos entornos y desafíos. Disfruto <strong class="resaltado">colaborar en equipo</strong> para encontrar soluciones eficientes ante cualquier obstáculo.
-            </p>
+            <h1 class="text-title section-title" data-i18n="about_me_title"></h1>
+            <p data-i18n-html="about_p1"></p>
+            <p data-i18n-html="about_p2" class="second-p"></p>
+            <p data-i18n-html="about_p3"></p>
 
         </div>
         
@@ -94,26 +87,19 @@
     
     <section class="bg-dark1 text-center" id="section-proyectos">
         <div class="container div-proyectos">
-            <h1 class="text-title section-title">Proyectos</h1>
-            <p>Proyectos personales donde demuestro mis conocimientos y experiencia como desarrollador. </p>
+            <h1 class="text-title section-title" data-i18n="project_title"></h1>
+            <p data-i18n="projects_p"></p>
             <div class="div-lista-proyectos">
 
                 <article class="div-proyecto" id="bike-price-tracker" data-aos="zoom-in-up" data-aos-delay="50">
                     <a href="bike-price-tracker"><img class="img-proyecto" src="/static/img/Bike Price Tracker.png" alt="Bike Price Tracker image" loading="lazy"></a>
                     
                     <h3>Bike Price Tracker</h3>
-                    <p>Aplicación web para consultar el <strong>historial de precios</strong> de bicicletas, diseñada para <strong>ayudar a los usuarios</strong> a identificar el mejor momento para comprar. 
-                    </p>
+                    <p data-i18n-html="bike_price_p"></p>
                     <ul>
-                        <li>
-                            Scraping automatizado
-                        </li>
-                        <li>
-                            Gestión de usuarios con autenticación
-                        </li>
-                        <li>
-                            Notificaciones por email cuando el precio baja
-                        </li>
+                        <li data-i18n="bike_price_li1"></li >
+                        <li data-i18n="bike_price_li2"></li>
+                        <li data-i18n="bike_price_li3"></li>
                     </ul>
 
                     <div class="div-tecnologias-proyecto">
@@ -140,7 +126,7 @@
                     </div>
                     
                     <footer class="div-botones-proyecto">
-                        <button class="button"><a href="bike-price-tracker">Más info</a></button>
+                        <button class="button"><a href="bike-price-tracker" data-i18n="button_info"></a></button>
                         <button class="button">Demo</button>
                         <button class="button">GitHub</button>
                     </footer>
@@ -150,18 +136,11 @@
                     <a href="bikechain"><img class="img-proyecto" src="/static/img/Bikechain.png" alt="Bikechain image" loading="lazy"></a>
                     
                     <h3>Bikechain</h3>
-                    <p>Aplicación web que permite registrar entrenamientos de ciclismo en la <strong>blockchain</strong> de Ethereum, generando <strong>NFTs como reconocimiento</strong> de tus logros.
-                    </p>
+                    <p data-i18n-html="bikechain_p"></p>
                     <ul>
-                        <li>
-                            Registro en contratos inteligentes
-                        </li>
-                        <li>
-                            Creacion de NFTs
-                        </li>
-                        <li>
-                            Conexión con Metamask
-                        </li>
+                        <li data-i18n="bikechain_li1"></li>
+                        <li data-i18n="bikechain_li2"></li>
+                        <li data-i18n="bikechain_li3"></li>
                     </ul>
 
                     <div class="div-tecnologias-proyecto">
@@ -197,19 +176,18 @@
                     </div>
 
                     <footer class="div-botones-proyecto">
-                        <button class="button"><a href="bikechain">Más info</a></button>
+                        <button class="button"><a href="bike-price-tracker" data-i18n="button_info"></a></button>
                         <button class="button">Demo</button>
                         <button class="button">GitHub</button>
                     </footer>
                 </article>
-
             </div>
         </div>
     </section>
 
     <section class="bg-dark1 text-center" id="section-tecnologias">
         <div class="container div-tecnologias">
-            <h1 class="text-title section-title">Tecnologías</h1>
+            <h1 class="text-title section-title" data-i18n="technologies_title"></h1>
             <div class="div-front-back">
                 <div class="div-frontend" data-aos="zoom-in-right">
                     <h3>Frontend</h3>
@@ -309,7 +287,7 @@
                 </div>
                 
                 <div class="div-herramientas" data-aos="zoom-in-left" data-aos-delay="100">
-                    <h3>Herramientas</h3>
+                    <h3 data-i18n="tools_title"></h3>
                     <div class="div-tecnologias-imgs">
                         <div class="div-tecnologia">
                             <svg class="img-tecnologia" id="img-git" role="img" viewBox="0 0 24 24">
@@ -350,11 +328,11 @@
 
     <section class="bg-dark1 text-center" id="section-contacto">
         <div class="container div-contacto">
-            <h1 class="text-title section-title">Contacto</h1>
+            <h1 class="text-title section-title" data-i18n="contact_title"></h1>
             <form class="form" id="contactForm" method="post" action="{% url 'contact' %}">
                 {% csrf_token %}
                 <div>
-                    <label for="">Nombre:</label>
+                    <label for="" data-i18n="name"></label>
                     {{ form.name }}
                 </div>
                 <div>
@@ -362,10 +340,10 @@
                     {{ form.email }}
                 </div>
                 <div>
-                    <label for="">Mensaje:</label>
+                    <label for="" data-i18n="message"></label>
                     {{ form.message }}
                 </div>
-                <button class="button" type="submit">Enviar</button>
+                <button class="button" type="submit" data-i18n="send"></button>
             </form>
             <div aria-live="polite" aria-atomic="true" class="position-relative">
                 <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">

@@ -1,4 +1,5 @@
 let currentLang = localStorage.getItem("lang");
+let translations = {}
 
 if (!currentLang) {
     const userLang = navigator.language || navigator.userLanguage;
@@ -8,13 +9,20 @@ if (!currentLang) {
 async function loadLanguage(lang) {
     try {
         const res = await fetch(`/static/lang/${lang}.json`);
-        if(!res.ok) throw new Error("No se pudo cargar el archivo de idioma");
-        const translations = await res.json();
+        if(!res.ok) throw new Error("Could not load language file");
+        translations = await res.json();
 
         document.querySelectorAll("[data-i18n]").forEach(el => {
             const key = el.getAttribute("data-i18n");
             if (translations[key]) {
                 el.textContent = translations[key];
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (translations[key]) {
+                el.innerHTML = translations[key]; 
             }
         });
 
@@ -24,7 +32,7 @@ async function loadLanguage(lang) {
         const btn = document.getElementById("lang-toggle");
         if (btn) btn.textContent = lang.toUpperCase();
     } catch (error) {
-        console.error("Error cargando idioma:", error);
+        console.error("Error loading language:", error);
     }
 }
 
@@ -41,3 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", toggleLanguage);
     }
 });
+
+function t(key) {
+    return translations[key] || key;
+}
+
+window.t = t;

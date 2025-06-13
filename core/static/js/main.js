@@ -1,3 +1,4 @@
+// Cierra el menú de navegación al hacer clic en un enlace
 document.querySelectorAll(".navbar-nav .nav-item .menu-link").forEach(link => {
     link.addEventListener("click", () => {
         const navbarCollapse = document.querySelector(".navbar-collapse");
@@ -16,7 +17,6 @@ document.querySelector("html").addEventListener("click", () => {
     }
 });
 
-
 // Toast con bootstrap
 function createBootstrapToast(message, type = "success") {
     const icons = {
@@ -31,65 +31,64 @@ function createBootstrapToast(message, type = "success") {
         info: "border-start border-4 border-warning"
     };
 
-  const toastContainer = document.getElementById("toast-container");
+    const toastContainer = document.getElementById("toast-container");
 
-  const toastEl = document.createElement("div");
-  toastEl.className = `toast align-items-center shadow-sm bg-white ${borderClasses[type]} border-0 mb-2`;  toastEl.setAttribute("role", "alert");
-  toastEl.setAttribute("aria-live", "assertive");
-  toastEl.setAttribute("aria-atomic", "true");
+    const toastEl = document.createElement("div");
+    toastEl.className = `toast align-items-center shadow-sm bg-white ${borderClasses[type]} border-0 mb-2`;
+    toastEl.setAttribute("role", "alert");
+    toastEl.setAttribute("aria-live", "assertive");
+    toastEl.setAttribute("aria-atomic", "true");
 
-  toastEl.innerHTML = `
-    <div class="d-flex">
-      <div class="toast-body d-flex align-items-center">
-        ${icons[type]}<span class="fw-semibold">${message}</span>
-      </div>
-      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-  `;
+    toastEl.innerHTML = `
+        <div class="d-flex">
+            <div class="toast-body d-flex align-items-center">
+                ${icons[type]}<span class="fw-semibold">${message}</span>
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    `;
 
-  toastContainer.appendChild(toastEl);
+    toastContainer.appendChild(toastEl);
 
-  // Inicializa el toast con Bootstrap JS
-  const toast = new bootstrap.Toast(toastEl);
-  toast.show();
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
 
-  // Elimina el toast del DOM cuando se oculta
-  toastEl.addEventListener('hidden.bs.toast', () => {
-    toastEl.remove();
-  });
+    toastEl.addEventListener("hidden.bs.toast", () => {
+        toastEl.remove();
+    });
 }
 
-
+// Formulario de contacto
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", async function (event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  createBootstrapToast("Enviando mensaje...", "info");
+    createBootstrapToast(t("sending_message"), "info");
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  try {
-    const response = await fetch(form.action || window.location.href, {
-      method: "POST",
-      body: formData,
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-      },
-    });
+    try {
+        const response = await fetch(form.action || window.location.href, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",
+            },
+        });
 
-    if (response.ok) {
-      form.reset();
-      createBootstrapToast("¡Mensaje enviado con éxito!", "success");
-    } else {
-      createBootstrapToast("Error al enviar el mensaje.", "danger");
+        if (response.ok) {
+            form.reset();
+            createBootstrapToast(t("message_success"), "success");
+        } else {
+            createBootstrapToast(t("message_error"), "danger");
+        }
+    } catch (error) {
+        createBootstrapToast(t("network_error"), "danger");
     }
-  } catch (error) {
-    createBootstrapToast("Error de red o del servidor.", "danger");
-  }
 });
 
-// Configuracion AOS
+// Configuración de AOS
 document.addEventListener("DOMContentLoaded", () => {
     AOS.init({
         duration: 500,
@@ -98,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Animación de los link del menu al hacer scroll
+// Resalta el enlace del menú según la sección visible
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".menu-link");
@@ -125,24 +124,23 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll);
 });
 
-
+// Configuración tsParticles
 tsParticles.load("tsparticles", {
-  background: {
-    color: "transparent"
-  },
-  particles: {
-    number: { value: 40 },
-    size: { value: 3 },
-    color: { value: "#21c4cf" },
-    move: { enable: true, speed: 1 },
-    line_linked: { enable: true, distance: 120, color: "#21c4cf", opacity: 0.3 }
-  },
-  fullScreen: { enable: false }
+    background: {
+        color: "transparent"
+    },
+    particles: {
+        number: { value: 40 },
+        size: { value: 3 },
+        color: { value: "#21c4cf" },
+        move: { enable: true, speed: 1 },
+        line_linked: { enable: true, distance: 120, color: "#21c4cf", opacity: 0.3 }
+    },
+    fullScreen: { enable: false }
 });
-
 
 // Copiar email
 function copyEmail() {
-  navigator.clipboard.writeText("diegoa.ayala@gmail.com");
-  alert("Correo copiado al portapapeles");
+    navigator.clipboard.writeText("diegoa.ayala@gmail.com");
+    alert(t("email_copied"));
 }
