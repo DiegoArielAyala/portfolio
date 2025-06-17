@@ -124,20 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll);
 });
 
-// Configuración tsParticles
-tsParticles.load("tsparticles", {
-    background: {
-        color: "transparent"
-    },
-    particles: {
-        number: { value: 40 },
-        size: { value: 3 },
-        color: { value: "#21c4cf" },
-        move: { enable: true, speed: 1 },
-        line_linked: { enable: true, distance: 120, color: "#21c4cf", opacity: 0.3 }
-    },
-    fullScreen: { enable: false }
-});
 
 // Copiar email
 function copyEmail() {

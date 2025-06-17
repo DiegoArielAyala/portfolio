@@ -1,15 +1,10 @@
-let currentLang = localStorage.getItem("lang");
-let translations = {}
-
-if (!currentLang) {
-    const userLang = navigator.language || navigator.userLanguage;
-    currentLang = userLang.startsWith("es") ? "es" : "en";
-}
+let translations = {};
+let currentLang = "es"; 
 
 async function loadLanguage(lang) {
     try {
         const res = await fetch(`/static/lang/${lang}.json`);
-        if(!res.ok) throw new Error("Could not load language file");
+        if (!res.ok) throw new Error("Could not load language file");
         translations = await res.json();
 
         document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -19,15 +14,14 @@ async function loadLanguage(lang) {
             }
         });
 
-        document.querySelectorAll('[data-i18n-html]').forEach(el => {
-            const key = el.getAttribute('data-i18n-html');
+        document.querySelectorAll("[data-i18n-html]").forEach(el => {
+            const key = el.getAttribute("data-i18n-html");
             if (translations[key]) {
-                el.innerHTML = translations[key]; 
+                el.innerHTML = translations[key];
             }
         });
 
         currentLang = lang;
-        localStorage.setItem("lang", lang);
 
         const btn = document.getElementById("lang-toggle");
         if (btn) btn.textContent = lang.toUpperCase();
@@ -42,8 +36,6 @@ function toggleLanguage() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadLanguage(currentLang);
-
     const btn = document.getElementById("lang-toggle");
     if (btn) {
         btn.addEventListener("click", toggleLanguage);

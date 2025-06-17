@@ -1,5 +1,5 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: rgb(31, 31, 31);
     color: rgb(240, 240, 240);
     margin: 0;
@@ -7,11 +7,11 @@ body {
     box-sizing: border-box;
 }
 
-p {
+.balance {
     text-wrap: balance;
 }
 
-.bg-dark1 {
+.bg-color {
     background-color: rgb(53, 53, 53);
     background-color: rgb(31, 31, 31);
     color: rgb(240, 240, 240);
@@ -150,6 +150,7 @@ section {
 .div-presentation P {
     margin-left: 15px;
     margin-bottom: 35px;
+    font-size: 28px;
 }
 
 .footer-buttons {
@@ -274,7 +275,6 @@ section {
     padding-bottom: 2.5rem;
 }
 
-.div-sobre-mi,
 .div-tecnologias,
 .div-proyectos,
 .div-contacto{
@@ -284,6 +284,7 @@ section {
 
 .div-sobre-mi {
     padding-inline: 50px;
+    padding-bottom: 3rem;
 }
 
 .div-sobre-mi h1{
@@ -309,104 +310,106 @@ section {
     padding: 48px 0px 70px 0px;
 }
 
-
 .div-proyectos > p {
     justify-self: center;
     max-width: 800px;
     font-size: 1.3rem;
     margin-bottom: 50px;
-    text-wrap: balance;
 }
 
 .div-lista-proyectos {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, 345px);
-    grid-auto-columns: minmax(100px, auto);
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     margin-top: 20px;
+    margin-inline: 100px;
 }
 
 .div-proyecto {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     background-color: rgba(53, 53, 53, 0.466);
     border-radius: 10px;
-    border-inline: 3px solid transparent;
-    transition: all .3s ease;
-    padding: 13px;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 20px;
+    gap: 40px;
     box-shadow: 0 0 15px black;
-    width: 345px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100%;
+    transition: all .3s ease;
+    border-inline: 3px solid transparent;
 }
 
 .div-proyecto:hover {
     border-left: 3px solid rgb(33, 196, 207);
 }
 
+.div-proyecto header {
+    display: flex;
+}
+
 .div-proyecto h3 {
-    padding: 5px;
-    color: rgb(175, 241, 242)
+    color: rgb(240, 240, 240);
+    margin-bottom: 10px;
+}
+
+.div-proyecto:hover h3 {
+    color: rgb(175, 241, 242);
 }
 
 .div-proyecto p {
     font-size: 1.1rem;
-    padding: 5px;
+    margin-bottom: 10px;
     text-align: start;
-    margin-bottom: 5px;
 }
 
 .div-proyecto ul {
-    text-align: left;
-    margin: 10px 5px;
-    padding-left: 20px;
     font-size: 1.1rem;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    text-align: start;
 }
 
-.img-proyecto{
-    width: 100%;
-    margin: 5px;
-    margin-left: 2px;
+.div-proyecto-img {
+    align-self: center;
+}
+
+.img-proyecto {
+    height: 100%;
     border-radius: 6px;
     transition: all .3s ease;
-    margin-bottom: 15px;
-    max-height: 248.64px;
 }
 
-.img-proyecto:hover{
+.img-proyecto:hover {
     transform: scale(1.05);
 }
+
+.div-proyecto-descripcion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
 
 .div-tecnologias-proyecto {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
-    padding: 5px;
-    margin-top: auto;
-    padding-top: 20px;
+    margin-bottom: 20px;
 }
-
 
 .div-tecnologia-proyecto {
     display: flex;
-    gap: 4px;
+    align-items: center;
+    gap: 6px;
     font-size: small;
     border: 1px solid rgba(33, 195, 207, 0.658);
     border-radius: 100px;
-    justify-content: center;
-    width: max-content;
-    padding: 4px;
-    padding-inline: 10px;
+    padding: 4px 10px;
     transition: all 0.1s ease;
 }
 
 .div-tecnologia-proyecto:hover {
     box-shadow: 0px 1px 1px rgba(33, 195, 207, 0.39);
-    
 }
 
 .img-tecnologia-proyecto {
@@ -414,8 +417,10 @@ section {
 }
 
 .div-botones-proyecto {
-    margin-top: auto;
-    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .div-botones-proyecto a {
@@ -453,7 +458,7 @@ section {
 }
 
 #img-django  {
-    color: #092E20;
+    color: #197250;
 }
 
 #img-postgres  {
@@ -461,7 +466,7 @@ section {
 }
 
 #img-solidity  {
-    color: #222222;
+    color: #1b1b1b;
 }
 
 #img-ethersjs  {
@@ -501,13 +506,10 @@ section {
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 10px 100px;
 }
 
-.div-front-back {
-    margin-top: 40px;
-}
+
 
 .div-frontend,
 .div-backend,
@@ -560,7 +562,12 @@ section {
 }
 
 .div-tecnologias {
-    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    margin-inline: 100px;
+    padding-inline: 0;
 }
 
 .div-tecnologia {
@@ -589,18 +596,8 @@ section {
     justify-content: space-evenly;
 }
 
-.div-contacto {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: rgb(73, 73, 73, 0.6);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    margin-block: 40px;
-}
-
 .div-contacto h1.text-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 40px;
 }
 
 
@@ -608,6 +605,13 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgb(73, 73, 73, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    margin-block: 40px;
 }
 
 .form > div {
@@ -700,6 +704,71 @@ section {
     transform: translateY(0);
 }
 
+.section-proyecto > div {
+    padding-top: 40px;
+}
+
+#carouselProjectImages {
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.div-proyecto-detalle h3 {
+    justify-self: center;
+    margin-bottom: 30px;
+    color: rgb(120, 228, 232);
+}
+
+.div-proyecto-detalle h4 {
+    justify-self: center;
+    margin-bottom: 30px;
+    color: rgb(120, 228, 232);
+}
+
+.div-tecnologias-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.div-tecnologia-detalle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+    border: 1px solid rgba(33, 195, 207, 0.658);
+    border-radius: 100px;
+    padding: 4px 10px;
+    transition: all 0.1s ease;
+}
+
+.div-tecnologia-detalle:hover {
+    box-shadow: 0px 1px 1px rgba(33, 195, 207, 0.39);
+}
+
+.img-tecnologia-detalle {
+    width: 25px;
+}
+
+.div-botones-detalle {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.div-botones-detalle a {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+.div-botones-detalle button:hover a {
+    text-decoration: none;
+    color: black;
+}
 
 @media (max-width: 991.98px){
     .navbar-collapse {
@@ -709,6 +778,7 @@ section {
 }
 
 @media (min-width: 991.98px) {
+    /*
     .div-lista-proyectos {
     grid-template-columns: repeat(auto-fit, 450px);
     gap: 40px;
@@ -717,6 +787,7 @@ section {
     .div-proyecto {
         width: 450px;
     }
+        */
 }
 
 @media (max-width: 600px) {
