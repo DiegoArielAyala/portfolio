@@ -458,7 +458,7 @@ section {
 }
 
 #img-django  {
-    color: #197250;
+    color: #145e42;
 }
 
 #img-postgres  {
@@ -467,6 +467,10 @@ section {
 
 #img-solidity  {
     color: #1b1b1b;
+}
+
+#img-solidity-claro {
+    color: #383838;
 }
 
 #img-ethersjs  {
@@ -770,27 +774,205 @@ section {
     color: black;
 }
 
+@media (max-width: 1399.98px) {
+    .div-home {
+        gap: 90px;
+    }
+
+    .div-lista-proyectos {
+        margin-inline: 40px;
+    }
+
+    .img-proyecto {
+        width: 500px;
+    }
+
+    .div-front-back,
+    .div-block-herr {
+        margin-inline: 40px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .div-home {
+        gap: 60px;
+    }
+
+    .div-lista-proyectos {
+        margin-inline: 20px;
+    }
+
+    .div-proyecto{
+        gap: 25px;
+    }
+
+    .img-proyecto {
+        width: 450px;
+    }
+
+    .div-front-back,
+    .div-block-herr {
+        margin-inline: 20px;
+    }
+
+    .div-proyecto-descripcion {
+        gap: 5px;
+    }
+
+    .div-tecnologia {
+        margin: .4rem;
+    }
+
+    #p-github-actions {
+        margin-bottom: 0;
+    }
+}
+
 @media (max-width: 991.98px){
     .navbar-collapse {
         text-align: center
     }
-    
-}
 
-@media (min-width: 991.98px) {
-    /*
-    .div-lista-proyectos {
-    grid-template-columns: repeat(auto-fit, 450px);
-    gap: 40px;
+    .div-home {
+        gap: 50px;
+    }
+
+    .div-proyectos,
+    .div-tecnologias,
+    .div-contacto {
+        padding-top: 20px;
+    }
+
+    .div-presentation h1 {
+        font-size: 40px;
+    }
+
+    .div-presentation p {
+        font-size: 24px;
+    }
+
+    .div-sobre-mi h1 {
+        margin-bottom: 25px;
     }
 
     .div-proyecto {
-        width: 450px;
+        flex-direction: column;
+        margin-inline: 70px;
     }
-        */
+
+    .img-proyecto {
+        width: 500px;
+    }
+
+    .div-tecnologias-proyecto {
+        justify-content: center;
+    }
+
+    .div-front-back,
+    .div-block-herr {
+        flex-direction: column;
+    }
+
+    .div-tecnologia p {
+        margin: 0;
+    }
+
+    .section-title {
+        margin-bottom: 25px;
+    }
+    
+}
+
+@media (max-width: 767.98px) {
+    .container {
+        max-width: 680px;
+    }
+
+    .div-home {
+        gap: 20px;
+    }
+
+    .img-proyecto {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .div-proyectos > p {
+        margin-inline: 20px;
+    }
+
+    .div-front-back,
+    .div-block-herr {
+        padding-inline: 20px;
+    }
+
+    .div-sobre-mi,
+    .div-proyectos,
+    .div-tecnologias {
+        padding-bottom: 25px;
+    }
 }
 
 @media (max-width: 600px) {
+    .button-home {
+        display: none;
+    }
+
+    .div-navbar {
+        justify-content: end !important;
+    }
+
+    .div-home {
+        flex-direction: column;
+        margin-top: 60px;
+        padding-block: 40px;
+        justify-content: center;
+    }
+
+    .div-presentation h1,
+    .div-presentation p {
+        display: flex;
+        justify-content: center;
+        margin-inline: 0;
+    }
+
+    .footer-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .div-sobre-mi {
+        padding: 0 25px;
+    }
+
+    .section-title{
+        margin-bottom: 5px;
+        font-size: 40px;
+    }
+
+    .div-proyecto {
+        margin-inline: 35px;
+    }
+
+    .image-container {
+        width: 280px;
+    }
+
+    .img-proyecto {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .div-front-back,
+    .div-block-herr {
+        margin-inline: 35px;
+    }
+
+    .div-tecnologias-imgs {
+        flex-wrap: wrap;
+    }
+
     .div-contacto {
         padding: 1.5rem 1rem;
         width: 90%;
@@ -798,6 +980,34 @@ section {
 
     .form .button.button {
         width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .div-sobre-mi {
+        padding: 0 10px;
+    }
+
+    .div-proyectos > p {
+        margin-inline: 10px;
+    }
+
+    .div-proyecto {
+        margin-inline: 0;
+        padding: 5px;
+    }
+
+    .div-front-back,
+    .div-block-herr {
+        margin-inline: 10px;
+    }
+
+    .div-contacto {
+        padding: 1rem .5rem;
+    }
+
+    .form {
+        padding: 1rem;
     }
 }
 
