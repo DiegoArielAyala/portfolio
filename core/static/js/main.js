@@ -22,7 +22,7 @@ function createBootstrapToast(message, type = "success") {
     const icons = {
         success: `<i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>`,
         danger: `<i class="bi bi-x-circle-fill text-danger fs-5 me-2"></i>`,
-        info: `<i class="spinner-border text-warning me-2" style="width: 1rem; height: 1rem;" role="status"><span class="visually-hidden">Loading...</span></i>`
+        info: `<div class="spinner-border text-warning me-2" style="width: 1.25rem; height: 1.25rem;" role="status"><span class="visually-hidden">Loading...</span></div>`
     };
 
     const borderClasses = {
@@ -64,7 +64,7 @@ const form = document.getElementById("contactForm");
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    createBootstrapToast(t("sending_message"), "info");
+    createBootstrapToast(t("Enviando mensaje..."), "info");
 
     const formData = new FormData(form);
 
@@ -79,12 +79,12 @@ form.addEventListener("submit", async function (event) {
 
         if (response.ok) {
             form.reset();
-            createBootstrapToast(t("message_success"), "success");
+            createBootstrapToast(t("Mensaje enviado."), "success");
         } else {
-            createBootstrapToast(t("message_error"), "danger");
+            createBootstrapToast(t("Error al enviar mensaje."), "danger");
         }
     } catch (error) {
-        createBootstrapToast(t("network_error"), "danger");
+        createBootstrapToast(t("Error en la red."), "danger");
     }
 });
 

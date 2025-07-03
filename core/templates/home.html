@@ -168,8 +168,16 @@
                                 <span>Solidity</span>
                             </div>
                             <div class="div-tecnologia-proyecto">
+                                <svg class="img-tecnologia-proyecto" id="img-ethersjs" role="img" viewBox="0 0 24 24"><use href="static/icons/icons.svg#logo-ethersjs"></use></svg>
+                                <span>Ethers.js</span>
+                            </div>
+                            <div class="div-tecnologia-proyecto">
                                 <svg class="img-tecnologia-proyecto" id="img-python" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-python"></use></svg>
                                 <span>Python</span>
+                            </div>
+                            <div class="div-tecnologia-proyecto">
+                                <svg class="img-tecnologia-proyecto" id="img-pytest" role="img" viewBox="0 0 24 24"><use href="../static/icons/icons.svg#logo-pytest"></use></svg>
+                                <span>Pytest</span>
                             </div>
                             <div class="div-tecnologia-proyecto">
                                 <svg class="img-tecnologia-proyecto" id="img-javascript" role="img" viewBox="0 0 24 24"><use href="static/icons/icons.svg#logo-javascript"></use></svg>
@@ -187,7 +195,7 @@
                         </div>
     
                         <footer class="div-botones-proyecto">
-                            <button class="button"><a href="bike-price-tracker" data-i18n="button_info">Más info</a></button>
+                            <button class="button"><a href="bikechain" data-i18n="button_info">Más info</a></button>
                             <button class="button"><a href="">Ver sitio</a></button>
                             <button class="button"><a href="https://github.com/DiegoArielAyala/bikechain">GitHub</a></button>
                         </footer>
@@ -331,6 +339,11 @@
                             </svg>
                             <p>Render</p>
                         </div>
+                        <div class="div-tecnologia">
+                            <svg class="img-tecnologia" id="img-pytest" role="img" viewBox="0 0 24 24">
+                                <use href="static/icons/icons.svg#logo-pytest"></use>
+                            </svg>
+                            <p>Pytest</p>
                         </div>
                     </div>
                 </div>
@@ -341,27 +354,25 @@
     <section class="bg-color text-center" id="section-contacto">
         <div class="container div-contacto">
             <h1 class="text-title section-title" data-i18n="contact_title">Contacto</h1>
-            <form class="form" id="contactForm" method="post" action="{% url 'contact' %}">
-                {% csrf_token %}
+            <form class="form" id="contactForm" method="POST" action="https://formspree.io/f/mqabgpqo">
                 <div>
-                    <label for="" data-i18n="name">Nombre:</label>
-                    {{ form.name }}
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" required>
                 </div>
                 <div>
-                    <label for="">Email:</label>
-                    {{ form.email }}
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div>
-                    <label for="" data-i18n="message">Mensaje:</label>
-                    {{ form.message }}
+                    <label for="message">Mensaje:</label>
+                    <textarea name="message" id="message" required></textarea>
                 </div>
-                <button class="button" type="submit" data-i18n="send">Enviar</button>
+                <button class="button" type="submit">Enviar</button>
             </form>
             <div aria-live="polite" aria-atomic="true" class="position-relative">
                 <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+                </div>
             </div>
-            </div>
-
         </div>
     </section>
 
